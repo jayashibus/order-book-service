@@ -6,14 +6,17 @@ class OrderBook {
     this.isOpen = false;
   }
 
+  //Open order
   open() {
     this.isOpen = true;
   }
 
+  //close order
   close() {
     this.isOpen = false;
   }
 
+  //Add Order
   addOrder(order) {
     if (!this.isOpen) {
       throw new Error("Order book is closed. Cannot add orders.");
@@ -21,6 +24,7 @@ class OrderBook {
     this.orders.push(order);
   }
 
+  //Execution
   addExecution(execution) {
     if (this.isOpen) {
       throw new Error("Order book is open. Cannot add executions.");

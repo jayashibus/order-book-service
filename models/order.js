@@ -1,4 +1,5 @@
 class Order {
+  //order
   constructor(orderQuantity, entryDate, instrumentId, price) {
     this.orderQuantity = orderQuantity;
     this.entryDate = entryDate;
