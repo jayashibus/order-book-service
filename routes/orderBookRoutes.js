@@ -4,7 +4,7 @@ const OrderBookService = require("../controller/orderBookService");
 const router = express.Router();
 const orderBookService = new OrderBookService();
 
-// Open order book
+// Open order book. IntrunmentID is 1 or Any other string can provided
 router.post("/:instrumentId/open", (req, res) => {
   const instrumentId = req.params.instrumentId;
   try {
