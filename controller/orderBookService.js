@@ -7,6 +7,7 @@ class OrderBookService {
     this.orderBooks = new Map();
   }
 
+  //open order
   openOrderBook(instrumentId) {
     if (this.orderBooks.has(instrumentId)) {
       throw new Error("Order book already exists for the given instrument id.");
@@ -15,6 +16,7 @@ class OrderBookService {
     this.orderBooks.set(instrumentId, orderBook);
   }
 
+  //close order
   closeOrderBook(instrumentId) {
     const orderBook = this.orderBooks.get(instrumentId);
     if (!orderBook) {
@@ -24,6 +26,7 @@ class OrderBookService {
     this.orderBooks.delete(instrumentId);
   }
 
+  //Add order
   addOrder(instrumentId, orderQuantity, entryDate, price) {
     const orderBook = this.orderBooks.get(instrumentId);
     if (!orderBook) {
@@ -33,6 +36,7 @@ class OrderBookService {
     orderBook.addOrder(order);
   }
 
+  //Execute order
   addExecution(instrumentId, quantity, price) {
     const orderBook = this.orderBooks.get(instrumentId);
     if (!orderBook) {
